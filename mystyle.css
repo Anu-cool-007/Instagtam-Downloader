@@ -1,0 +1,59 @@
+#btn-download {
+  cursor: pointer;
+  display: block;
+  width: 2.25em;
+  height: 2.25em;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  bottom: 0.8em;
+  right: 0.8em;
+  background: rgba(166, 168, 172, 0.5);
+}
+#btn-download:hover {
+  background: rgba(255, 255, 255, 1);
+}
+#btn-download svg {
+  margin: 0.28em 0 0 0.48em;
+  fill: none;
+  transform: translate3d(0, 0, 0);
+}
+#btn-download svg polyline,
+#btn-download svg path {
+  stroke: rgb(38, 38, 38);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s ease;
+  transition-delay: 0.3s;
+}
+#btn-download svg path#check {
+  stroke-dasharray: 38;
+  stroke-dashoffset: 114;
+  transition: all 0.4s ease;
+}
+#btn-download.downloaded {
+  background: rgba(255, 255, 255, 1);
+}
+#btn-download.downloaded svg .svg-out {
+  opacity: 0;
+  animation: drop 0.3s linear;
+  transition-delay: 0.4s;
+}
+#btn-download.downloaded svg path#check {
+  stroke: rgb(237, 73, 86);
+  stroke-dashoffset: 174;
+  transition-delay: 0.4s;
+}
+
+@keyframes drop {
+  20% {
+    transform: translate(0, -3px);
+  }
+  80% {
+    transform: translate(0, 2px);
+  }
+  95% {
+    transform: translate(0, 0);
+  }
+}
